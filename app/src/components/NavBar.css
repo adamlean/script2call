@@ -1,0 +1,46 @@
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  padding: 20px;
+  margin-top: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav_title {
+  display: flex;
+}
+
+.nav_menu a {
+  color: rgb(0, 0, 0);
+  text-decoration: none; 
+}
+
+.nav_menu a:hover {
+  color: rgb(19, 151, 30);
+  text-decoration: underline;
+}
+
+.nav_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.burger,
+.close {
+  display: none;
+}
