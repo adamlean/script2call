@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import NavBar from './components/NavBar';
 
 // Pages
 import Home from "./pages/Home";
-
+import Auth from './pages/Auth';
+import WorkBoard from './pages/WorkBoard';
 
 // Layouts
 // import DefaultLayout from "./layouts/DefaultLayout";
@@ -23,7 +25,9 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-         <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+         <Route path="/workboard" element={<WorkBoard />} />
       </Routes>
     </Router>
   );

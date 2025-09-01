@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import Workspace from "../components/Workspace";
-import "./Home.css";
 
-function Home() {
+function Workboard() {
   useEffect(() => {
     document.title = "Script2Call | Менеджер скриптов";
   }, []);
@@ -12,4 +11,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Workboard;

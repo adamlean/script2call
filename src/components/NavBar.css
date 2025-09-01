@@ -40,6 +40,15 @@
   margin: 0;
 }
 
+.nav_menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
 .burger,
 .close {
   display: none;

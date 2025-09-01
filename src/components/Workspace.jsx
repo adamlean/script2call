@@ -11,9 +11,9 @@ function Workspace() {
     newCategory: "",
     text: "",
   });
-  const [editing, setEditing] = useState(null); // id редактируемого скрипта
+  const [editing, setEditing] = useState(null); // id of the script being edited
 
-  // Загружаем из localStorage
+  // Loading from localStorage
   useEffect(() => {
     const saved = localStorage.getItem("scripts");
     if (saved) {
@@ -36,7 +36,7 @@ function Workspace() {
     }
   }, []);
 
-  // Сохраняем в localStorage при изменении
+  // Save in localStorage when changed
   useEffect(() => {
     localStorage.setItem("scripts", JSON.stringify(scripts));
 
@@ -47,7 +47,7 @@ function Workspace() {
     setCategories([...cats].sort());
   }, [scripts]);
 
-  // Добавление скрипта
+  // Adding a script
   const handleAddScript = (e) => {
     e.preventDefault();
 
@@ -71,7 +71,7 @@ function Workspace() {
     setFormData({ title: "", category: "", newCategory: "", text: "" });
   };
 
-  // Удаление
+  // Removal
   const handleDelete = (key) => {
     if (window.confirm(`Удалить скрипт "${scripts[key].title}"?`)) {
       const updated = { ...scripts };
@@ -81,7 +81,7 @@ function Workspace() {
     }
   };
 
-  // Сохранение редактирования
+  // Saving edits
   const handleEditSave = (e, key) => {
     e.preventDefault();
     const form = e.target;
@@ -96,7 +96,7 @@ function Workspace() {
     setEditing(null);
   };
 
-  // Группировка скриптов по категориям
+  // Grouping scripts into categories
   const grouped = {};
   Object.entries(scripts).forEach(([key, script]) => {
     if (!grouped[script.category]) grouped[script.category] = [];
@@ -105,7 +105,7 @@ function Workspace() {
 
   return (
     <div className="wrapper">
-      {/* Список слева */}
+      {/* List on the left */}
       <div className="sidebar-left">
         <h2>Скрипты</h2>
         <div>
@@ -158,7 +158,7 @@ function Workspace() {
         </div>
       </div>
 
-      {/* Контент */}
+      {/* Content */}
       <div className="content">
         {activeScript ? (
           <>
@@ -172,7 +172,7 @@ function Workspace() {
         )}
       </div>
 
-      {/* Правая панель */}
+      {/* Right panel */}
       <div className="sidebar-right">
         <h2>Новый скрипт</h2>
         <form onSubmit={handleAddScript}>

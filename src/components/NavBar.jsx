@@ -12,7 +12,7 @@ const NavBar = () => {
   return (
     <header className="header">
       <div className="contaner">
-        <div className="navbar">
+        <div>
           <button
             className="burger"
             aria-label="Открыть меню"
@@ -45,10 +45,11 @@ const NavBar = () => {
               Script2Call
             </Link>
             <ul className="nav_menu">
-              <Link to="/" onClick={closeMenu}>Главная</Link>
-              <Link to="/about" onClick={closeMenu}>О нас</Link>
-              <Link to="/beats" onClick={closeMenu}>Документация</Link>
-              <Link to="/discography" onClick={closeMenu}>Контакты</Link>
+              <li><Link to="/" onClick={closeMenu}>Главная</Link></li>
+              <li><Link to="/about" onClick={closeMenu}>О нас</Link></li>
+              <li><Link to="/beats" onClick={closeMenu}>Документация</Link></li>
+              <li><Link to="/discography" onClick={closeMenu}>Контакты</Link></li>
+              <li><Link to="/auth" onClick={closeMenu}>Войти</Link></li>
             </ul>
           </nav>
 
